@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vic.colortools.controller.DistanceController">
+   <children>
+       <fx:include source="menu.fxml"></fx:include>
+      <Label text="Distance tool">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+  
+      <GridPane alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+               <children>
+                  <ColorPicker fx:id="colorPicker" onAction="#miseAJour" prefHeight="25.0" prefWidth="175.0" />
+                  <CheckBox fx:id="cbBackground" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cbBackgroundActionHandler" text="Background">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="2">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="labelDistance" alignment="CENTER" text="distance : " />
+                     </children>
+                  </HBox>
+                  <Slider fx:id="distanceSlider" blockIncrement="1.0" majorTickUnit="1.0" max="300.0" minorTickCount="0" value="150.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="labelSteps" alignment="CENTER" text="steps : " />
+                     </children>
+                  </HBox>
+                  <Slider fx:id="stepsSlider" blockIncrement="1.0" majorTickUnit="1.0" max="50.0" value="25.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="labelGap" alignment="CENTER" text="gap : " />
+                     </children>
+                  </HBox>
+                  <Slider fx:id="gapSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" snapToTicks="true" value="5.0" />
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </VBox>
+            <FlowPane fx:id="flowPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </FlowPane>
+            <Slider fx:id="edgeSlider" blockIncrement="1.0" majorTickUnit="1.0" minorTickCount="0" value="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" onAction="#btnSaveActionHandler" text="Save image" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
